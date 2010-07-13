@@ -1,0 +1,127 @@
+<div class="container">
+  <h1>Rails + Vim Cheatsheet</h1>
+  
+  <div class="span-6">
+    <table>
+      <caption>
+        <em>Expand with &lt;C-&#93;&gt; or a &lt;Tab&gt;.</em>
+      </caption>
+      <thead>
+        <tr>
+          <th colspan="6">Abbreviations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @abbreviations.each_with_index do |abbreviation,i| %>
+          <tr class="<%= cycle(i) %>">
+            <td colspan="1"><strong><%= abbreviation[0] %></strong></td> 
+            <td colspan="5"><%= abbreviation[1] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="span-5">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="5">Commands</th> 
+        </tr>
+      </thead> 
+      <tbody>
+        <% @commands.each_with_index do |command,i| %> 
+          <tr class="<%= cycle(i) %>">
+            <td colspan="5"><%= command %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table> 
+
+    <table>
+      <caption>
+        <em>If no file is given, assumed from cursor. 'gf' edits the file under the cursor.</em> 
+      </caption>
+      <thead>
+        <tr>
+          <th colspan="5">Navigation</th> 
+        </tr>
+      </thead> 
+      <tbody>
+        <% @navigation.each_with_index do |nav,i| %> 
+          <tr class="<%= cycle(i) %>">
+            <td colspan="5"><%= nav %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table> 
+
+
+  </div>
+
+  <div class="span-10">
+
+    <table>
+      <thead>
+        <tr>
+          <th colspan="3">Current</th>
+          <th colspan="3">Alternate</th>
+          <th colspan="4">Related</th>
+        </tr> 
+      </thead> 
+      <tfoot>
+        <tr>
+          <td colspan="10">
+            
+              Open the alternate/related file in the same window(E), new split(S), vertically split(V), new tab(T).</td> 
+        </tr>      
+      </tfoot>
+      <tbody>
+        <% @alternate_related.each_with_index do |ar, i| %>
+          <tr class="<%= cycle(i) %>">
+            <td colspan="3"><%= ar[0] %></td>        
+            <td colspan="3"><%= ar[1] %></td>
+            <td colspan="4"><%= ar[2] %></td>
+          </tr> 
+        <% end %>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Other</th> 
+        </tr>   
+      </thead> 
+      <tbody>
+        <tr class="odd">
+          <td><strong>:[range]Rextract [{controller}/]{name}</strong> - Extract into partial.</td> 
+        </tr>         
+        <tr class="even">
+          <td><strong>:Rabbrev</strong> - List all Rails abbreviations. Pass {abbr} {expn} [{extra}] to create new abbreviations. ! removes an abbreviation.</td> 
+        </tr>
+      </tbody>
+    </table>
+
+
+    <table>
+      <thead>
+        <tr>
+          <th>General VIM commands</th>
+        </tr> 
+      </thead> 
+      <tbody>
+        <% @vim_commands.each_with_index do |vim, i| %>
+          <tr class="<%= cycle(i) %>">
+            <td><%= vim %></td> 
+          </tr> 
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+
+
