@@ -124,7 +124,8 @@ get '/vim-rails' do
     ":1,$d - Delete all lines in file.",
     ":[%]s/search/replace/[g,c] - Search and replace. g - global, c - confirm, % - entire file.",
     ":w/:q - Save/quit file.",
-    "!command - Run regular shell command."
+    "!command - Run regular shell command.",
+    ":tabonly - Close all tabs except current."
   ]
 
   erb :vim_rails
